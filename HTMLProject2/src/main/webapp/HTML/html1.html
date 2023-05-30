@@ -1,0 +1,243 @@
+<!-- 
+	 1장 28page
+	 ----------
+	 웹 : 사용자 요청 (브라우저 주소창을 이용해서 요청) 
+	               ----------------------서버가 연결이 된다 
+	               요청 데이터를 전송 => 검색어 , 페이지 , ...
+	               => 자바코딩 : request.getParameter("")
+	                             
+	브라우저 주소창 입력 : URL 
+	http://localhost:8080 /HTMLProject2/html/html1.html
+	                       ----------------------------
+	----   --------- ----          | URI=> 사용자가 요청한 파일
+	|         |        |           => 파일은 중복이 없다
+	                포트번호(서버연결하는)
+	       서버주소(==IP, 도메인으로 변경도 가능)
+	프로토콜: 웹에 연결해줌 => 고정번호 80번
+	----------------------==서버정보
+	
+	=> Front-end => JavaScript(Jquery(Ajax),VueJS,ReactJS,NodeJS)
+	   Back-end => Java , Oracle , Spring , MSA(분산처리)
+	                               MVC(하나의 서버로 이용)
+	   Full Stack
+	   -------------------------------------------------------------
+	   HTML : 브라우저에서 화면 출력 담당, 정적임 , 출력뿐 다른 기능은 없음. => 중간 서버 연결 프로그램언어
+	   
+	   HTML은 표준화 => 화면이 투박 => 그래서 화면 설정을 변경한게> CSS) 
+	   --------------------------------------------------------------------------
+	   32page JavaScript=ECMAScript (최근 버전은 6)
+	          .js / .jsx (JavaScript+XML == React,Vue)
+	   33page HTML5버전 => HTML4에 있는 태그 대부분을 사용
+	          기능 첨부 => 태그 제거
+	          시맨텍 태그 : 알기 쉽게 태그명을 설정한 것
+	           => HTML4버전은 태그명이 추상적으로 되어있어서 알아보기 편함.
+	           => 예) <kkk> => <name>
+	                <object>, <embed> => <video>,<audio>
+	          통신=> 클라이언트 통신 using websocket thread io web store
+	          => 템플릿 태그
+	             <div class="header">
+	             <div class="section">
+	             <div class="aside">
+	             <div class="nav">
+	             <div class="footer">
+	          -----------------------------------------------------
+	            로고            검색기
+	          -----------------------------------------------------
+	                           메뉴
+	          -----------------------------------------------------
+	           로그인   |  
+	                  |  
+	                  |  
+	                  |  
+	                  |  
+	                  |  
+	          -----------------------------------------------------
+	           footer(회사정보)
+	          -----------------------------------------------------
+	          41page
+	          1. 브라우저 (chrome, firefox)
+	          2. HTML 편집기 => vscode , 이클립스(Back-End)
+	                          웹스톰 , 아톱(Front편집기)
+	          3. 웹서버 , JPS/Servlet번역기(자바에서 실행된 결과를 HTML로 변환해주는 역할)
+	             -------------------------------------톰캣이 실행해줌.
+	             ------------------------------최대 50명까지만 사용 가능
+	          
+	          51page => 표준화 (W3C => html표준화 방식)
+	            HTML 설명 => ML(Markup Language)
+	            => 표준화되어있어 만들어진 태그만 사용이 가능
+	            <> => 태그형식으로 제작하는 과정
+	            XML => 모든 태그는 사용자정의로 되어있다.
+	            
+	            태그의 종류
+	            <태그명> => 여는 태그
+	            </태그명> => 닫는 태그 (여닫이는 한 쌍)
+	            <태그명/> => 값이 없는 태그 ... => <br> <hr> <p> <input>
+	                                        => 맨 뒤에 /는 생략할 수 있다
+	                                        하지만 React/vue에서는 사용하지 않으면 오류 발생한다 ㅋㅋ
+	                                        
+	            => 지원하는 태그
+	               여는 태그 / 닫는 태그 둘다 사용
+	               <a> <font> <h1> <div> <span>
+	               독립태그
+	                <br> <hr> <input> <img>
+	               
+	            => 태그 -> 태그명별 출력 역할과 속성 ****
+	            => 속성 (모든태그 해당)
+	               1. id(구분자/ 자바스크립트,CSS에서 구분하기 위해 사용: 중복이 없다),
+	                  class(구분자로 구분: 중복이 있다) ,
+	                  style(해당 태그만 CSS를 줄 때)
+	               2. 형식) <태그 속성="값">
+	                  예) <img src="출력할 이미지" width="크기" height="길이">
+	            => 트리 형식으로 저장 (DOM : document object model)
+	            ----------------------------------------------------------------
+	            HTML의 구조
+	             <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	               => HTML4 버전에 해당되는 태그/속성의 정보 읽어온다
+	             <!DOCTYPE html>
+	               => HTML5 버전을 읽어온다
+	            => loose.dtd
+	                     --- 태그의 형식
+	               예)
+	                 <!ELEMENT table (tr)*>
+	                 <!ELEMENT caption #PCDATA*>
+	                 <!ELEMENT tr (th|td)*>
+	                 ----------------------------------- 
+	             형식)
+	                <html>
+	                  <head>
+	                  // 설정 파일 => CSS,javaScript
+	                    <link> => css읽을때 사용.파일이 외부에 있음
+	                    <style>
+	                     => 파일 자체에서 처리
+	                    </style>
+	                    <title></title> //브라우저 이름
+	                    <meta></meta> //
+	                  </head>
+	                  <body>
+	                  </body>
+	                </html>
+	                
+	               CSS => 1. 파일화 => .css => 프로젝트에 공통으로 적용되는 CSS
+	                      <link href="경로/파일명:http:~"> 
+	                      2. 각 파일에만 적용
+	                         <style></style>
+	                      3. 해당 태그에만 적용 <h1 style=""> => 인라인 CSS
+	              JavaScript
+	                   => 1. 파일 => .js =>  모든 파일에 적용
+	                      <script src="파일명|http:~">
+	                   => 해당 파일에서만 적용
+	                      <script>
+	                       function send(){}
+	                      </script>        
+	                   => 해당 태그에만 적용
+	                      <input type=button
+	                          onclick="javascript:history.back()">
+	             
+	         Chapter 3장
+	         = 실제 사용 태그
+	         -------------
+	         ------------------------------------------------------------------
+	           글자 태그
+	            => <h1> , <h3> : 제목 출력
+	               <p> : 단락 나누기
+	               <br> : /n 새로운 줄로
+	               <hr> : 수평선(구분) => 단독 태그
+	            => <b> : bold, 강조 => <em> <strong> 강조체
+	            => <sub>:아래첨자 , <sup>:위첨자 , <del>:삭제(---) => 장바구니 ,
+	            => 
+	            
+	         ------------------------------------------------------------------
+	           목록 태그
+	            => ***ul(메뉴제작시) , ol , dl , ***table(목록 출력시)
+	               <ul>
+	                |
+	               <li>목록출력</li> => 여러개 사용 가능
+	               
+	               <ol>
+	                |
+	               <li>목록출력</li> => 여러개 사용 가능
+	               
+	               <dl> => 상세보기
+	                |
+	               <dt> 제목
+	               <dd> 설명 
+	               
+	               <table>
+	                 |
+	               <caption>: 제목
+		               <tr>
+		                |
+		               -----
+		               |   |
+		             <th> <td>
+		            제목   실제 데이터
+	         ------------------------------------------------------------------
+	           멀티미디어 태그
+	            => <embed> , <img>
+	               <embed src="파일명" width="" height=""></embed>
+	               <img src="파일명" width="" height="">
+	               이미지 출력 속성
+	               => src=> 원격 가능/파일명으로 저장해서 가져오기 가능
+	                  ~~ gif , jpg , png 만 사용 가능
+	               => width : 크기 조절
+	               => height : 길이 조절
+	               => title : 풍선 도움말 
+	               => inline : 바로 옆으로 출력
+	            => 경로명
+	               html파일과 동일한 위치에 있다면?
+	               <img src="파일명"> , <img src="./파일명"> 
+	               다른 폴더에 위치
+	               <img src="../image/파일명">
+	               
+	         ------------------------------------------------------------------
+	           기타 태그
+	            => <iframe>
+	               html파일에 특정 위치의 다른 html을 첨부할 수 있다
+	               => 분산해서 작업이 가능
+	            => <area> : 이미지 선택 시 처리(메뉴) 
+	            => <figure> : 이미지와 문자를 매칭 => card
+	         ------------------------------------------------------------------
+	           
+	         ------------------------------------------------------------------
+	         
+	          
+	          
+	          
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <style type="text/css">
+img {
+	width:150px;
+	height:100px;
+}
+img:hover{
+	opacity: 0.3;
+}
+</style> -->
+
+</head>
+<body>
+  <!-- <img src="M.jpg" >
+  <img src="M2.jpg" >
+  <img src="M3.jpg" >
+  <img src="M4.jpg" >
+  <img src="M5.jpg" > -->
+  <!--<embed src="http://youtube.com/embed/Os_heh8vPfs\u0026pp=YAHIAQE%3D" width=450 height=500> -->
+  <!-- 초등학생용 사이트에 많이 활용: area -->
+  <img src="./book2.png" usemap="#image">
+  <map name="image">
+    <area shape="rect" coords="229,99,462,255" href="http://www.daum.net">
+  </map>
+  <p>
+  <h1>figure사용법</h1>
+  <figure>
+    <!-- .. ==cd(change directory) -->
+    <img src="image/M2.jpg" width=250 height="300">
+    <figcaption>인어공주</figcaption>
+  </figure>
+</body>
+</html>
