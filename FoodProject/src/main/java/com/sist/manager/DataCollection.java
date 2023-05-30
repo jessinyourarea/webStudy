@@ -172,8 +172,8 @@ public class DataCollection {
 		}catch(Exception ex) {}
 	}
 	public static void main(String[] args) {
-		DataCollection dc=new DataCollection();
+//		DataCollection dc=new DataCollection();
 //		dc.foodCategoryData();
-		dc.foodDetailsData();
+//		dc.foodDetailsData();
 	}
 }

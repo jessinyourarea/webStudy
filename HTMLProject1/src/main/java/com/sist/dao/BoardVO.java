@@ -7,13 +7,20 @@ package com.sist.dao;
 import java.util.*;
 public class BoardVO {
 	private int no,hit;
-	private String name,subject,content,dbday;
+	private String name,subject,content,pwd,dbday;
+
 	private Date regdate;
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
 	public int getHit() {
 		return hit;
