@@ -1,0 +1,127 @@
+<!-- 
+	--------------------------------------------------------
+			블록 태그                      인라인 태그
+	--------------------------------------------------------
+			<div>                        <span>
+	--------------------------------------------------------
+			<h1>~<h6>                    <a>
+	--------------------------------------------------------
+			<p><br>                      <input><img><textarea><select>	
+	--------------------------------------------------------
+			<ol><ul><dl><table>          글자 태그 <b><i><strong>
+	--------------------------------------------------------
+		변경 가능 => inline to block
+		          block to inline
+		          
+		          태그명(ID,CLASS) {
+		             display:block;
+		          }
+		          태그명(ID,CLASS) {
+		             display:inline;
+		          }		
+	--------------------------------------------------------
+		시멘텍 태그 : 템플릿 태그
+		          ---------
+		 
+		무료 웹 템플릿 => HTML5로 주로 되어있음.
+		-------------------------------------------------------------
+			<header>:검색기, 로고
+		-------------------------------------------------------------
+			<nav> : 메뉴
+		-------------------------------------------------------------
+		<aside>: 부가적인 정보(인기검색어,뉴스 등)
+		로그인	|	<section> : 본문/ 메뉴클릭 시 변경
+		광고		|   ----------------------------
+				|	<article>
+				|	----------------------------
+				|   <article>: 기능별 분류/ 독립적 사용 가능
+				|   ----------------------------
+		-------------------------------------------------------------
+			<footer>: 회사정보, 개인보안방침, 주소 , 사이트맵 등
+		-------------------------------------------------------------
+ 		=> 110page : 시멘틱 웹 구현도
+ 		
+ 		=> 템플릿 태그 using CSS
+ 		=> 화면 분할 
+ 		   1. table 분할 : 사용 빈도는 거의 없다
+ 		   2. <div> => 상용화된 웹사이트의 중심
+ 		   3. HTML5의 템플릿 태그 
+ 		   ----------------------------- CSS
+ 		   CSS => HTML화면구성 후에 나중에 CSS대입 가능
+ 		   
+ 		   
+ 		
+ 
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<center>
+		<h1>Table태그를 이용한 화면 분할</h1>
+		<!--
+		  1. 테이블 사용하는 방법 => 어떤 모양인지 확인  
+			<table>
+			  |
+			<tr>
+			  |
+	      -------------
+	      |           |
+	      <th>       <td>
+	      제목        실제 데이터 출력
+	      
+	      2. <table>이 가지고 있는 속성
+	         1) 구분자
+	              id ====> 중복이 없는 구분자
+	              class ====> 중복이 있는 구분자
+	         
+	         2) HTML에서 제공하는 속성
+	         width : 넓이
+	         height : 높이 ==> 단위:픽셀
+	         border : 테두리 두께
+	         bordercolor : 테두리 색상
+	         cellpadding : td안의 간격 (좌우 위아래 처리도 모두)
+	         cellspacing : td와 td사이의 공간 (좌우 위아래 처리도 모두)
+	         > 표 사이의 열 파티션()
+	         background : 색상,이미지 처리 등
+	         
+	      
+		 -->
+		 <table width=960 height=800 border=1 bordercolor=black cellspacing=0 cellpadding=30>
+		 	<tr>
+		 		<td colspan="3" height="100" align=center>Header>로그, 검색기</td>
+		 		<!-- 
+		 		<tr> => height25
+		 		<td> => colspan/rowspam/width/height
+		 		        align: left/center/right > 가로정렬 시
+		 		        	   ----
+		 		        	   chrome: left정렬
+		 		        	   IE: center 정렬
+		 		        valign:top / middle / bottom =>세로절령
+		 		               middle이 디폴트. 
+		 		
+		 		 -->
+		 		
+		 	</tr>
+		 	<tr>
+		 		<td colspan="3" height="100" align=center>NAV:메뉴</td>
+		 	</tr>
+		 	
+		 	<tr>
+		 		<td width=200 height=600 align=center>Aside<</td>
+		 		<td width=500 height=600 align=center>Section</td>
+		 		<td width=200 height=600 align=center>Aside</td>
+		 	</tr>
+		 	
+		 	<tr>
+		 		<td colspan="3" height="100" align=center>FOOTER</td>
+		 	</tr>
+		 	
+		 	
+		 </table>
+	</center>
+</body>
+</html>
