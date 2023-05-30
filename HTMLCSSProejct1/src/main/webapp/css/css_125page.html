@@ -1,0 +1,123 @@
+<!-- 
+	CSS => 스타일 : 태그를 읽어온다
+	
+	Selector => 디자인 , Jsoup, JavaScript
+	                    | 데이터수집 | 태그를 제어하는 프로그램
+	                                 = 이런걸 DOM이라고 부름.
+	1. SELECTOR 
+		1) 태그 처리
+		2) ID명 처리 (중복없이 단독으로 처리)
+		   <a id="">
+		3) CLASS명 처리 (중복 존재)
+		   <a class=""> 
+		-------------------------------태그만으로는 구분이 안되니 생기는 구분자
+		4) 가상선택자
+	2. CSS 사용법
+	   선택자 {
+	     속성:값;
+	     속성:값;
+	     속성은 이미 지정된 상태
+	     
+	     주석=> /* */
+	   }
+	= 태그명
+	  <h1 id="a">An Empty Street</h1> =>red
+	  <h1 id="b">An Empty House</h1>  => orange
+	  <h1 id="c">A whole inside of my heart</h1>  => cyan
+	    => doc.select(h1#c)
+	  <h1 class="d"></h1> ==> blue
+	  <h1></h1> => magenta
+	  <h1></h1> =>magenta
+	  <h1></h1> => blue
+	  
+	색상 변경
+	h1 {
+	     color:red;
+	}
+	==> h1 전체를 선택하는 경우
+	h1#a {
+	   h1태그의 아이디가 a인 경우 ==> 아이디를 읽기: #아이디명
+	}  
+	h1.d {
+	   h1태그의 클래스가 d인 경우 ==> 클래스를 읽기 : .클래스명
+	}
+	
+	==> CSS를 적용 
+ 	1) 내부 CSS : 한 파일 안에서 적용
+ 	   <head> 
+ 	      <style>
+ 	        선택자(태그) {
+ 	           속성:값;
+ 	           속성:값;
+ 	           ...
+ 	           ...
+ 	        }
+ 	      </style>
+ 	   </head>
+	2) 외부 CSS : 파일로 만든다 (확장자 .css) => 여러개 파일에 공통으로 적용될 때
+	   <head>
+         <link rel="stylesheet" href="파일(경로명/파일명)/원격(http~~)"> 
+	   </head>
+	3) 인라인 CSS : 해당 태그에만 적용할 때
+	   <태그 style=""> : 모든 태그는 style,id,class는 무조건 가지고 있다.
+	                               |    -------- 구분자 역할
+	                             디자인
+	                             => name속성(별도로)
+	                               : 자바와 연동 시에 데이터 전송해줌.
+	                                예)Servlet/ JSP/ Spring/ Spring-Boot
+	                                 
+	
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type:"text/css">
+/* id / class=> 태그의 구분자 (id는 한개만 class는 여러개)*/
+h1 { 
+   /* 스타일 적용*/
+   color:red;
+}
+h1#a{
+  color:yellow;
+}
+h1#b{
+  color:cyan;
+}
+h1.c{
+  color:purple;
+}
+h1.d{
+  color:blue;
+}
+b1.e{
+  color:magenta;
+}
+
+/*
+126page => CSS는 디자인뿐 아니라 자바스크립트 에서도 사용한다 (Jquery, Vue, React 등등)
+
+*/
+</style>
+</head>
+<body>
+   <h1 id="a">Java:응용프로그램(데이터베이스 연동/ 브라우저 연동)</h1>
+   <h1 id="b">오라클: 공통으로 사용되는 데이터를 저장/관리</h1>
+   <h1 class="c">HTML/CSS: 브라우저에 출력만 담당 => 기능X응용X</h1>
+   <h1 class="c">JavaScript: Front-End : 프로그램언어=> 라이브러리활용(TypeScript)</h1>
+   <h1 class="d">JSP(Servlet) : 오라클과 브라우저를 연결해주는 역할 </h1>
+   <h1 class="d">통합=>모든 개발자가 동일한 코딩을 할 수 있게 만든다: Spring</h1>
+   <h1 id="e">웹 호스팅:AWS</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 선택자 -->
+<!-- 
+   전체 선택자 : * (글꼴 => 구글폰트) => 사이트는 색상,글꼴 통일되야 깔끔하다 
+                                          ---3~5개 이내 권장
+   * {
+       font-family:글꼴 
+   }
+   
+   태그 선택자 : 태그 ... 
+   아이디 선택자 : #아이디명
+   클래스 선택자 : .클래스명 
+   --------------------- 기본 형식: 기본 속성자!!!!
+   
+ **  속성 선택자 : 모든 태그에 적용
+      input[type="button"] => button전체를 선택
+      input[type="text"]
+      태그명[속성=값]
+     --------------------------
+      태그명[속성*=/recipe/] => /recipe/를 포함할 때
+      태그명[속성^="a"] => a로 시작할 때
+      태그명[속성$="b"] => b로 끝날 때
+ **  후손 선택자 : 
+      <div>
+        <p></p>
+        <h1></h1>
+        <h1></h1>
+        <span>
+          <h1></h1>
+        </span>
+      </div>
+                  div
+                  ---
+                   |     
+         --------------------------
+         |    |    |      |
+         p   h1    h1    span  => 자손태그 => div>h1 (자손태그까지만은 꺽쇠 사용)
+                          |
+                          h1   => 후손태그 => div h1 (후손태그까지 가져올땐 꺽쇠X 띄어쓰기!)
+                                   div > span > h1
+         
+         
+     자손 선택자 : ==> 태그명 > 태그명 > ㅐ그명 ...
+       자손 : >사용 , 후손: 공백 사용
+ **  반응 선택자 : 가상선택자 => :hover (a,img,tr)
+                 a:hover , img:hover , tr:hover
+                 => 마우스오버
+     상태 선택자 : checked => 체크가 됐는지 안됐는지
+                 input:checked
+                 -------------- 체크박스, 라디오버튼에서 사용
+                 enabled : 활성화시키기
+                 disabled : 비활성화 
+                 ----------------- 버튼, text(id중복체크)에서 사용
+ **  구조 선택자 : 
+      first-child => 메뉴 제작
+      last-child => 메뉴 제작 
+      nth-child => 위치 선정
+                   nth-child(2n+1) => 1 3 5 7 ..
+                              0  => 1
+                              1  => 3
+                              2  => 5
+      -------------------------------------
+      
+ **  동위 선택자 : 
+     <table>
+       <tr>
+         <th>aaa</th>
+         <td>aaaaaa</td>
+         <td>bbbbbb</td>
+       </tr>
+     </table>
+               table
+                |
+                tr
+                |
+         ----------------
+         |       |       |
+         th     td       td
+         
+         table tr td => table tr th+td(인접한 td를 먼저)
+         table tr th ~ td => 전체 td를 읽어 온다
+         
+ **  문자 선택자 : (before/after)
+                예) new, 특가, 할인가 ..등등 이미지나 설명에 붙는 태그
+       선택자::before
+       선택자::after 
+     부정 선택자 :
+       li:not(.item)
+       
+     => CSS의 속성
+ -->
+<style type="text/css">
+img {
+  width:200px;
+  height:280px;
+}
+img:hover{
+  cursor:pointer;
+  border:3px solid red;
+}
+/*
+  태그 찾기 => 1. 디자인 , 2. 자바스크립트 , 3. 크롤링
+*/
+table > thead > tr {
+  background-color: cyan;
+}
+table > tbody > tr:nth-child(2n) {
+  background-color:rgb(255,255,200);
+}
+table > tbody > tr:nth-child(2n+1) {
+  background-color:rgb(255,255,0);
+}
+</style>
+</head>
+<body>
+<!-- 
+  <img src="M.jpg">
+  <img src="M2.jpg">
+  <img src="M3.jpg">
+  <img src="M4.jpg">
+  <img src="M5.jpg">  -->
+  <center>
+    <table border=1 bordercolor=black width=500>
+     <thead>
+      <tr>
+        <th>이름</th>
+        <th>국어</th>
+        <th>영어</th>
+        <th>수학</th>
+      </tr>
+     </thead>  
+     <tbody>
+      <tr>
+        <td>홍길동</td>
+        <td>90</td>
+        <td>90</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>심청이</td>
+        <td>90</td>
+        <td>90</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>박문수</td>
+        <td>90</td>
+        <td>90</td>
+        <td>90</td>
+      </tr>
+     </tbody>  
+    </table>
+  </center>
+  
+</body>
+</html>
