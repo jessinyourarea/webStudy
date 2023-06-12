@@ -1,0 +1,98 @@
+<!-- 
+	속성
+	1) 텍스트 관련 속성
+	   => 글자 크기 속성
+	      font-size=(px,em)
+	          px기본14, em=>2em(14*2) , 1.2em(14*1.2) (14배수)
+	   => 글자 스타일(글꼴)
+	      font-family: 궁서체 고딕체 바탕체 
+	      font-weight: bold 
+	   => 정렬
+	      text-align: left|center|right
+	                  (문자수가 다르면 왼쪽 정렬이 보기 좋음)
+	      text-decoration: none|underline => <a>에서 자주 등장(default:underline)
+	      vertical-align:top|middle|bottom
+	      ==========td태그 (여러문장일때=> 중간)
+	      white-space: 자동 줄바꿈(내용, 줄거리)
+	      line-height: 자간 
+	2) 이미지 관련 속성
+	      background-image:URL('파일명')
+	      background-size:width, height | cover
+	      background-color: yellow
+	                        rgb(255,255,255)
+	                        #FFF ...(hexacode=16진법)
+	      background(위의통합형):
+	3) 위치 속성 (159page)
+	   margin: 태그와 태그의 여백
+	   padding: 태그 안의 문자, 이미지 여백
+	   --------------------------------
+	   margin
+	     = margin-left
+	     = margin-right
+	     = margin-top
+	     = margin-bottom
+	     = margin(위의통합형):시계방향
+	                      top right bottom left
+	       margin: 10px;
+	              10px 10px 10px 10px
+	       margin: 10px 20px; 
+	               10px 20px 10px 20px
+	       margin: 10px 20px 30px;
+	               10px 20px 30px 20px
+	   padding
+	     = padding-left
+	     = padding-right
+	     = padding-top
+	     = padding-bottom
+	     = padding(통합형):시계방향
+	                     top right bottom left 
+	4) 테두리 속성
+	   border
+	     = border-width
+	     = border-style(solid, dotted, dashed, double)
+	     = border-color
+	     = border(통합형): 2px solid red
+	5) 목록 속성 (ol,ul)
+	     = list-style-type:none
+	6) 박스모델
+	     = inline, block, inline-block
+	       한줄출력  띄워출력  -------------태그의 width,height 변경
+	     = inline: input, img, textarea, select, b, em, span...
+	     = block: div table ul ol br p
+	7) 포지션
+	     = static => 코딩 순서로 출력
+	     = absolute => 절대 좌표(top,bottom,left,right 지정 가능)
+	     = relative => 상대 좌표
+	     = fixed: 고정 (메뉴, 퀵메뉴, 채팅창)
+	8) 기타
+	     = z-index (레이어 기반 화면 가장 위로 올려줄 때(
+	     = float (left|right) 
+	       => 해제시 clear
+	9) 반응형 웹
+	     = 해상도에 따라 크기변경
+	       @media 
+ --><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+a{
+	display:block; /*각 줄마다 <br>태그가 붙은 효과.*/
+	color:black;
+	text-decoration: none;
+}
+a:hover{
+	color:cyan;
+	text-decoration:underline;
+}
+</style>
+</head>
+<body>
+   <a href="#">굿바이 코로나19…오늘부터 확진자 격리 해제, 일</a>
+   <a href="#">굿바이 코로나19…오늘부터 확진자 격리 해제, 일</a>
+   <a href="#">굿바이 코로나19…오늘부터 확진자 격리 해제, 일</a>
+   <a href="#">굿바이 코로나19…오늘부터 확진자 격리 해제, 일</a>
+   <a href="#">굿바이 코로나19…오늘부터 확진자 격리 해제, 일</a>
+</body>
+</html>
