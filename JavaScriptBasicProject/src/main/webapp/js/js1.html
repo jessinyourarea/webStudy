@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+자바스크립트(p287) 6.15(목)
+--------------
+Front : 브라우저 화면 출력 (정적) / 브라우저 제어(동적) -> 기능처리
+        ------------           ----------
+        HTML / CSS            javaScript(라이브러리 Jquery -> VueJS/ReactJS)
+Back : 자바(오라클 / 브라우저 연결) > 데이터 관리
+   =내부스크립트(한개 파일에서만 사용)
+   <script type="text/javascript">
+   기능처리
+   </script>
+   ---------------ES5(ES6~8)
+   <script type "text.babel"> vue, react
+   기능처리
+   </script>
+   =외부 스크립트 (공통으로 사용되느 부분) -> 파일로 제작(.js)
+   import -> 사용
+   <script type="text/javascript" src="원격(URL)|파일경로명">
+   =인라인스크립트 : 태그 한개를 제어
+   <input type=button onclick ="javascript:history.back()">
+   2. 버전
+   ES5
+      제어문, 연산자, 변수
+      변수 : var(자동지정변수)
+           var i=10 -> i:int
+           var i=10.0 -> i:double
+           var i=' ' -> i:String
+           var i[]= -> i:Array[]
+           즉 자동으로 형변환해서 저장시켜줌 그래서 변수는 var하나뿐임
+           자바스크립트
+           if()
+          같다   같지않다
+           ==   !=
+           --   --
+           ===  !==
+   ES6
+      var 대신 블록변수(지역변수) -> let(지역변수), const(상수형변수)
+      연산자 : 비교연산자
+               ==(같다), !== (같지않다)
+      화살표함수 : =>
+      function display(){}
+      let display=()=>{} => function, return(삭제)
+      문장 종료시에 ; 을 사용하지 않는다(권장)
+      제어문
+         -> for -> map(), forEach()
+      -------------------------------------------------------
+      변수
+         let 변수명 = 값
+         ------------ 값에 따라서 자동으로 데이터형이 변경
+         let i =10;
+         i="hello";
+         -----------------------------------
+         -> 출력 Ststem.out.println() : 자바
+            Document.write() -> 브라우저안에 출력
+            ------- 브라우저 출력위치
+            ***console.log() -> 도스창에 출력
+            alert() -> 팝업창
+         -> 식별자
+            1) 알파벳으로 시작한다(대소문자 구분한다)
+            2) 숫자사용이 가능(단 맨앞에 올 수 없다)
+            3) 키워드는 사용이 불가능하다 (if, var, let...)
+            4) 특수문자 사용이 가능(_,$) -> _를 많이 사용한다 -> 288page
+         -> 문자
+            <script>
+               //한줄 주석
+               /* */ 여러줄 주석
+            </script>
+            근데 JSP는 또 다름ㅋㅋ
+            <%--  --%>
+      연산자
+      제어문
+      배열
+      함수
+      객체지향
+      라이브러리
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+{
+/*
+   react : componeentDidMount(){}
+ */
+//정수형 / 실수형 -> Number -> int/double
+let a=10;
+let b=10.5;
+// 출력
+console.log("a="+typeof a);
+console.log("b="+b);
+/*
+   자바스크립트에서 지원하는 데이터형
+   1.number
+   2.String -> '', ""
+   3.object -> {}, []
+   4.boolean -> true(1), false(0)
+   5.null
+   6.undefined
+   ---------- 확인 -> typeof
+ */
+ //문자열(String) => '',""
+ let c='Hello JavaScript!!' //여러글자 사용이 가능 -> String
+ let d="Hello JavaScript!!";
+ console.log("c="+c+","+typeof c);
+ console.log("d="+d+","+typeof d);
+ // \t(tab), \n(new line), \"", \'' , \ => \\  ---294page escape 문자 특수문자
+ // 문자열 결합
+ let e=c+","+d
+ console.log("e="+e);
+ // boolean : true/false
+ let f=true
+ let g=false
+ console.log("f="+f+","+typeof f)
+ console.log("g="+g+","+typeof g)
+ f=Boolean(0.1); //정수를 boolean으로 변환
+ g=Boolean(0.0); //정수를 boolean으로 변환
+ // 0, 0.0이 아닌 모든 수는 true로 취급된다.
+ console.log("f="+f+","+typeof f)
+ console.log("g="+g+","+typeof g)
+ let k; //초기화가 안된 상태
+ console.log("k="+k)
+ //지역변수는 반드시 선언 = 초기화
+ let m=[10,"홍길동",10.5]; //Array 배열 -> object형으로 되어 있다. -> 데이터형이 섞여서 표현가능
+ /*
+    자바와 차이점이 있다 위와같은 선언일시 자바는 int string double형 순으로 가져오지만
+    js의 경우 let변수 하나로 통일이라 루프문 사용이 편리하다
+ */
+ let n={name:"홍길동",sex:"남자"}; //객체 -> JSON
+ // name, n.sex 멤버변수
+ console.log("m="+typeof m+":"+m);
+ console.log("n="+typeof n+":"+n);
+ /*
+   변수 선언
+ */
+ //JavaScriptBasicProject
+ }
+</script>
+</head>
+<body>
+</body>
+</html>

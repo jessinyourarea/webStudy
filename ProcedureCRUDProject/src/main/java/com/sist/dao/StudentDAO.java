@@ -13,7 +13,7 @@ public class StudentDAO {
 	private CallableStatement cs;
 	
 	//URL
-	private final String URL="jdbc:oracle:thin:@localhost:1521:xe";
+	private final String URL="jdbc:oracle:thin:@211.238.142.108:1521:xe";
 	
 	//싱글턴
 	private static StudentDAO dao;

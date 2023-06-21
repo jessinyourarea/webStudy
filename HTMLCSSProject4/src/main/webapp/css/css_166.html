@@ -1,0 +1,76 @@
+<!-- 166page
+	가시속성
+	----- 화면 출력
+	- - - - - - : inline
+	-
+	-
+	-
+	-
+	-
+	- block
+	-------------------------필요 시에 변경 가능
+	display: none => 화면에 출력하지 않는다
+	         block => 한줄에 태그 한 개만 출력 (자동 줄바꿈)
+	         inline => 한 줄에 태그 여러개를 동시에 출력 (width,height 적용 안됨)
+	         inline-block => 한 줄에 태그 여러개를 동시에 출력
+	                         + 태그의 크기를 지정 (width,height 적용 가능) 
+    inline 태그
+    	                     
+	  
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+input[type=text]{
+	display:block;
+	margin-top:5px;
+}
+div.a{
+	width:100px;
+	height:100px;
+	background-color: green;
+	margin:10px;
+	display:inline-block;
+}
+</style>
+</head>
+<body>
+   <div>Hello CSS1</div>
+   <div>Hello CSS2</div>
+   <div>Hello CSS3</div>
+   <hr>
+   <hr>
+   <ul>
+   	 <li>Java</li>
+   </ul>
+   <h1>inline 속성 태그의 종류</h1>
+   <span>Hello CSS1</span>
+   <span>Hello CSS2</span>
+   <input type=text size=20 id="name">
+   <input type=text size=20>
+   <input type=text size=20>
+   <input type=text size=20>
+   <input type=text size=20>
+   <textarea rows="5" cols="20"></textarea>
+   <textarea rows="5" cols="20"></textarea>
+   <textarea rows="5" cols="20"></textarea>
+   <h1>inline, inline-block difference</h1>
+   <div class="a"></div>
+   <div class="a"></div>
+   <div class="a"></div>
+   <div class="a"></div>
+   <div class="a"></div>
+   
+</body>
+</html>
+
+
+
+
+
+
+
+

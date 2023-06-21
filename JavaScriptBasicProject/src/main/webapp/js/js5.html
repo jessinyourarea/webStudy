@@ -1,0 +1,148 @@
+<!-- 
+    
+    if(1 -> true라면)
+    if(0 -> false라면) -> 산술처리를 하고 결과값으로 true/false 처리가 가능하다.
+    선택조건문
+    형식)
+       if(조건문)
+       {
+          조건 true일때 처리
+       }
+       else
+       {
+          조건 false일때 처리
+       }
+       
+       언어순위
+       python
+       c
+       js
+       
+    다중조건문
+	    
+	    if(조건문)
+	    
+	    else if(조거문)
+	    
+	    else if(조건문)
+	    
+	    else
+	    
+	선택문
+	   switch(숫자, 문자)
+	   {
+	      case 값:
+	         처리
+	       break;
+	       
+	       case 값:
+	         처리
+	       break;
+	       
+	       case 값:
+	         처리
+	       break;
+	   }
+    ES6 -> VueJS ReactJS
+    배열.forEach(변수)
+    
+    배열.map((변수) => {
+    })
+    
+    ---------------------------------
+    
+    4) 반복제어문
+       break: 반복문을 종료할때 사용
+       
+    태그를 제어(구분자 -> name, id, class) : 태그를 찾을때 css의 selector를 이용한다
+    1. 태그에 id속성이 있는 경우
+       모든 태그를 관리 -> document
+       document.getElementById("아이디명") -> $('#아이디명'), $refs.아이디명
+    2. 태그에 calss속성이 있는 경우
+       document.getElementByClassName("클래스명")
+    3. 태그에 name속성이 있는 경우
+       document.getElementByName("name명")
+    4. 태그명을 읽는 경우
+       document.getElementByTagName("tag명")
+    5. css의 Selector를 이용할때**** 
+       document.querySelector(css);
+       #아이디
+       .클래스명
+       태그명
+    
+       
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// if 유효성 검사
+/* window.onload=function(){
+	let a=10;
+	if(a%2==0){
+		console.log(a+"짝수")
+	}
+	else{
+		console.log(a+"홀수")
+	}
+		
+} */
+function login(){
+	let id=document.getElementById("id").value;
+	if(id=="")
+	{
+		//alert("아이디를 입력하시오")
+		
+		document.getElementById("id").focus();
+		document.getElementById("result").innerHTML="아이디를 입력하세요";
+	}
+}
+</script>
+<style type="text/css">
+.container{
+  margin-top:50px;
+}
+.row{
+  margin:0px auto;
+  width:350px;
+}
+h1{
+  text-align:center
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>IF조건문 연습: 단일 조건문</h1>
+    <table class=table>
+      <tr>
+        <th width=35% class="text-center">ID</th>
+        <td width=35%>
+          <input type=text id=id size=15 class="input-sm">
+        </td>
+      </tr>
+      
+      <tr>
+        <td colspan=2>
+          <span id="result" style="color:red"></span>
+        </td>
+      </tr>
+      
+      <tr>
+        <th width=35% class="text-center">Password</th>
+        <td width=65%>
+          <input type=password id=pwd size=15 class="input-sm">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class=text-center>
+          <input type=button class="btn btn-sm btn-primary" value="로그인"
+          onclick="login()">
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

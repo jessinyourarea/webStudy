@@ -1,0 +1,203 @@
+<!-- 
+	반응,상태,구조선택자 => 형식)  태그명(아이디명,클래스명):active => 가상 선택자
+	=> 반응 선택자
+	   :active , hover(빈도수 많음) => img,a
+	    ------   ---------------
+	마우스 클릭 시   마우스 오버 시
+	   
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+h1#a:active{
+	color:red;
+}
+h1#a:hover{
+	color:green;
+	cursor:pointer;
+}
+
+h1#b:hover{ color:blue; }
+h1#b:active{ color:magenta; }
+
+h1#c:hover{ color:yellow; }
+h1#c:active{ color:pink; }
+
+a{
+	color:black;
+	text-decoration:none; /* underline 지우기 */
+}
+a:hover{
+	color:cyan;
+	text-decoration:underline;
+}
+/*  <a> <img> <tr> 에서 주로 사용: hover, text-decoration **
+*/
+input[type="checkbox"]:checked{
+	border:5px solid pink;
+}
+input[type="text"]:enabled{
+	background-color:yellow
+}
+input[type="text"]:disabled{
+	background-color:cyan
+}
+input[type="text"]:focus{
+	background-color:black;
+	color:white;
+}
+/*
+ul > li:first-child{
+	background-color:blue;
+	color:white;
+}
+*/
+
+h1>span{
+	background-color:yellow;
+}
+/*
+ul > li:last-child{
+	background-color:green;
+	color:yellow;
+}
+*/
+
+/*
+ul>li:nth-child(2n){
+	background-color:yellow;
+}
+*/
+table thead tr:first-child{
+	background-color: orange;
+}
+table tbody tr:nth-child(2n){
+	background-color: rgb(255,255,220);
+}
+
+#menu> li{
+	list-style:none;
+	float: left;
+	padding: 15px;
+	width:120px;
+}
+#menu > li:nth-child(2n){
+	background-color:#FF0003;
+}
+#menu > li:nth-child(2n+1){
+	background-color:#800000;	
+}
+#menu > li:first-child{
+	border-radius:20px 0px 0px 20px;
+}
+#menu > li:last-child{
+	border-radius:0px 20px 20px 0px;
+}
+
+
+</style>
+</head>
+<body>
+	<center>
+	  <h1>:active,:hover = 가상선택자(반응선택자)</h1>
+	  <h1 id="a">java</h1>
+	  <h1 id="b">oracle</h1> <!-- hover:blue active:magenta -->
+	  <h1 id="c">HTML/CSS</h1><!-- hover:yellow active:pink -->
+	  <a href="#">JSP(WebDev)</a>
+	  <p>
+	  <h1>:checked(checkBox, radio), :focus(text, password), enable(button), disabled(button)</h1>
+	  <input type=text size=30><p>
+	  <input type=text size=30 disabled="disabled"><p>
+	  <input type=checkbox checked>취미1<p>
+	  <input type=checkbox>취미2<p>
+	  <input type=radio checked>YES
+	  <p>
+	  <!-- 
+	  	 nth-child => 수열
+	  	 nth-child(2n)
+	  	 2n => 0 2 4 6 ... 
+	  	 2n+1 => 1 3 5 7 ...
+	  	 3n => 0 3 6 9 ...  
+         <li>도</li> 1
+	     <li>레</li> 2  yellow 
+	     <li>미</li> 3 
+	     <li>파</li> 4 yellow
+	     <li>설</li> 5
+	     <li>라</li> 6  yello
+	     <li>시</li> 7
+	   -->
+	  
+	  <h1>구조선택자(:first-child-맨앞, :last-child-마지막, <span style="color:red">:nth-child-몇번째위치,</span> :nth-last-child-뒤부터몇번째위치))</h1>
+	  <ul>
+	     <li>도</li> <!-- 블루 -->
+	     <li>레</li>
+	     <li>미</li>
+	     <li>파</li>
+	     <li>설</li>
+	     <li>라</li>
+	     <li>시</li> <!-- 그린 -->
+	  </ul>
+	  <h1>nth-child => table에서 적용</h1>
+	  <table width=500 border=1 bordercolor=black;>
+	   <thead>
+	     <tr>
+	       <th>이름</th>
+	       <th>국어</th>
+	       <th>영어</th>
+	       <th>수학</th>
+	     </tr>
+	   </thead>
+	   <tbody>
+	     <tr>
+	       <td>아리엘</td>
+	       <td>80</td>
+	       <td>80</td>
+	       <td>80</td>
+	     </tr>
+	     <tr>
+	       <td>모아나</td>
+	       <td>75</td>
+	       <td>75</td>
+	       <td>75</td>
+	     </tr>
+	     <tr>
+	       <td>뮬</td>
+	       <td>85</td>
+	       <td>85</td>
+	       <td>85</td>
+	     </tr>
+	     <tr>
+	       <td>참깨</td>
+	       <td>95</td>
+	       <td>95</td>
+	       <td>95</td>
+	     </tr>
+	     <tr>
+	       <td>우니</td>
+	       <td>95</td>
+	       <td>95</td>
+	       <td>95</td>
+	     </tr>
+	   </tbody>
+	  </table>
+	  <p>
+	  <ul id=menu>
+	     <li>Home</li>
+	     <li>Sign-in</li>
+	     <li>맛집</li>
+	     <li>맛집 추천</li>
+	     <li>맛집 검색</li>
+	     <li>서울 여행</li>
+	     <li>레시피</li>
+	     <li>커뮤니티</li>
+	     <li>마이페이지</li>
+	  </ul>
+	  
+	  
+	  
+	</center>
+</body>
+</html>

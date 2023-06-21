@@ -1,0 +1,51 @@
+<!-- 
+   비교연산자 결과값은 boolean
+   브라우저에서만 작업할 수 있다.
+   자바와 자바스크립트는 연결이 불가능하다
+   -------------
+   호환-> Arraylist -> [], VO -> {} 연결하는 프로그램 JSON
+         Restful -> 다른 시스템과 연결
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//비교연산자 => 숫자, 문자열, 날짜도 동일하게 사용한다.
+// ===, !==, <, > <=, >
+//정수에 대한 연산은 자바와 동일하다
+
+//문자열
+// 문자열의 길이와는 상과없이 문자의 순서에 따라 다른다
+// A > B
+// 가 > 나
+let c="HELLO";
+let d="JavaScript";
+let e="GELL";
+console.log("c+d)="+(c===d)); //false
+console.log("c<=d)="+(c<=d)); //true  이H < J
+console.log("c<d)="+(c<d)); //true
+console.log("c<e)="+(c<e)); //false
+
+/*
+   유효성 검사( 자바스크립트를 이용해서 자바로 전송전에 처리)
+   if(nmae==="") -> not null
+ 
+ */
+ let i=(6<7) && (6==7)
+ console.log("i="+i)
+ //여러개의 문자열 결합, 합 누적
+
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
+
+
+
+
+
