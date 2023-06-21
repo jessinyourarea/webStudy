@@ -1,0 +1,52 @@
+<!--  overflow
+	    => hidden: 화면에 내용이 많은 경우=> 감추는 기능
+	    => scroll: 스크롤바
+
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body> div{
+	width:300px;
+	height:300px;
+	border:3px solid black;
+	position:relative;
+	over-flow:hidden;
+}
+.d{
+	background-color:yellow;
+	width:100px;
+	height:100px;
+	position:absolute; 
+	
+}
+.a{
+	background-color:yellow;
+}
+.b{
+	background-color:cyan;
+	left:10px;
+	top:10px;
+	z-index: 100
+}
+.c{
+	background-color:blue;
+	left:10px;
+	top:10px;
+	z-index:6;
+}
+
+
+</style>
+</head>
+<body>
+   <div>
+     <div class="a d"></div>
+     <div class="b d"></div>
+     <div class="c d"></div>
+   </div>
+</body>
+</html>

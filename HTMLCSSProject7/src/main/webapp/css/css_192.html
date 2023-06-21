@@ -1,0 +1,68 @@
+<!-- 
+	192page
+	-----
+	위치속성
+	  = float (left|right)
+	  = z-index: 레이어 (순위결정) 값이 높을 때 위로 올라온다
+	  = clear: float을 해제할때 사용
+	  = position
+	    absolute: 절대 좌표
+	    -------- 지도
+	    relative: 상대좌표(태그)
+	              태그 안에서 작동시키려면 relative를 써야함.. 지우면 해당 영역 바깥에서 작동
+	              css_195_1 참고~
+	    fixed: 고정(메뉴,이미지)
+	    static: 순서대로 배치 (디폴트)
+	    
+	    위치 지정
+	      => top
+	      => left
+	      => right
+	      => bottom
+	      
+	      -------------------------------------
+	                       ↓top
+	                 -----------------
+	       → left                      right ←
+	                 -----------------
+	                       ↑bottom
+	      -------------------------------------
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+img{
+	width:200px;
+	height:250px;
+	margin-left: 30px;
+	float:left;
+
+}
+</style>
+</head>
+<body> <!-- float: 이미지 배치, 화면 분할 (left|right|none) -->
+   <h1>엘리멘탈</h1>
+   <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87034/87034_320.jpg">
+   <pre>
+	디즈니·픽사의 놀라운 상상력!
+	올여름, 세상이 살아 숨 쉰다
+	
+	불, 물, 공기, 흙 4개의 원소들이 살고 있는 ‘엘리멘트 시티’
+	재치 있고 불처럼 열정 넘치는 ‘앰버'는 어느 날 우연히
+	유쾌하고 감성적이며 물 흐르듯 사는 '웨이드'를 만나 특별한 우정을 쌓으며,
+	지금껏 믿어온 모든 것들이 흔들리는 새로운 경험을 하게 되는데...
+   </pre>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
