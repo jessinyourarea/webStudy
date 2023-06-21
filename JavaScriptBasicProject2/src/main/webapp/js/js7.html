@@ -1,0 +1,44 @@
+<!-- 
+	문서  객체  모델
+	--   --   --
+	          Model
+	     Object
+	Document
+	----------------- DOM(태그를 제어하는 프로그램)
+	태그<==> 자바스크립트와 연결
+	--- 메모리 저장 시에 트리형태로 저장(여는태그/닫는태그가 나뉘어 있는 이유!)
+	    = HTML의 단점은 느슨하다? => 완전한 트리형을 유지하지 못한다는것(예: <p> <input> 등등)
+	    = XML은 여는 태그와 닫는 태그의 갯수가 다르면 오류 발생! ==> 완전한 트리형을 유지해야만 함!
+	      ---------------------
+	      등록/환경 설정
+	      XML => MyBatis/Spring
+	             SQL     클래스 > 저장되어있어야함.
+	             
+	      => XML은 사용하기 불편함! => 그래서 대체사항으로 Annotation 등장, 혹은 properties
+	      
+	      
+	1) 태그 찾기 
+	   341page
+	   => 객체를 검색(태그를 객체로 본다) => 속성: 멤버변수
+	   <a href> => a:객체 , href:변수
+	1. 태그를 1개 선택
+		= Element : 태그(여러개면 Elements)
+		= Attribute : 속성
+		= Text: 값
+		document.getElementById() <a id="">
+		   => 라이브러리 $('#아이디')
+		document.querySelector(selector:css와 동일함)
+	2. 태그 여러개 선택 (class,tag명) => 배열
+	    document.getElementsByClassName()
+	    document.querySelectorAll()
+	
+ --><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

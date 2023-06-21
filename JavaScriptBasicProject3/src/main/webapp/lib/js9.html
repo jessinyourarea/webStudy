@@ -1,0 +1,59 @@
+<!-- 
+	onclick 
+ --><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+let i=0; // open(0)/close(1) 
+window.onload=function(){
+	let r=document.querySelector("#read")
+	// => css제어할때는 <style>
+	r.onmouseover=function(){
+	   r.style.cursor="pointer"		
+	}
+	r.onmouseout=function(){
+	   r.style.cursor="none"		
+	}
+	r.onclick=function(){
+		if(i==0)
+		{
+			let ss=document.querySelector("#s")
+			ss.style.display='' //열어주기
+			r.textContent="닫기"
+			i=1;
+		}
+		else
+		{
+			let ss=document.querySelector("#s")
+			ss.style.display='none' // 닫아주기 = hide
+		    r.textContent="더보기"			
+			i=0;
+		}
+	}
+	//form 태그에서 submit을 제거할 때 사용하는 이벤트 제거방법
+	//e.defaultPrevent() 
+	document.querySelector("#click").onclick=function(){
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+   <a href="http://www.naver.com" id="click">Naver</a>
+   <p>
+<pre>
+President Yoon Suk Yeol departed for France on Monday to promote South Korea's bid to host the 2030 World Expo in its southeastern city of Busan,
+ the first leg of a two-nation tour that will later take him to Vietnam.
+<span id="read">더보기</span>
+<span style="display:none" id="s">
+Yoon will attend a general assembly of the Bureau International des Expositions (BIE),
+ the international body in charge of overseeing the World Expo, on Tuesday and Wednesday, with an English speech planned for South Korea's presentation the first day.
+
+The assembly will be held in Issy-les-Moulineaux, a commune in the southwestern suburban area of Paris,
+ and bring together delegates from all 179 member states of the BIE.
+</span>
+</pre>
+</body>
+</html>
