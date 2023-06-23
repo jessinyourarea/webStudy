@@ -36,7 +36,7 @@
 	
 	//오늘 날짜 구하기
 	String today=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-	
+	String id=(String)session.getAttribute("id");
 	
 %>
 
