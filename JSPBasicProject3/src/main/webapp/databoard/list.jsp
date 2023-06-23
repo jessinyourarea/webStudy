@@ -36,7 +36,10 @@
 	
 	//오늘 날짜 구하기
 	String today=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+	
+	// id가 null이면, 로그인이 안된 상태
 	String id=(String)session.getAttribute("id");
+	
 	
 %>
 
@@ -65,6 +68,31 @@ h1{
   <div class="container">
     <h1>자료실</h1>
     <div class="row">
+    
+      <table class="table">
+        <tr>
+        <%
+        	if(id!=null)
+        	{
+        %>
+          <td class="text-right">
+            <%=session.getAttribute("name") %> 님 로그인 중입니다.
+            <a href="../member/logout.jsp" class="btn btn-sm btn-primary">로그아웃</a>
+          </td>
+        <%
+        	}
+        	else
+        	{
+        %>
+          <td class="text-right">
+            <a href="../member/login.jsp" class="btn btn-sm btn-primary">로그인</a>
+          </td>
+        <%		
+        	}
+        %>
+        </tr>
+      </table>
+     
       <table class="table">
         <tr>
           <td>
