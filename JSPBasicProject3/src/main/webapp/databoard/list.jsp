@@ -20,7 +20,7 @@
 	int totalPage=(int)(Math.ceil(count/10.0));
 	
 	final int BLOCK=5;
-	int startPage=((curPage-1)/BLOCK*BLOCK)+1;
+	int startPage=(((curPage-1)/BLOCK)*BLOCK)+1;
 	// 5페이지까지는 0 (5-1)/5*5 => 0 
 	int endPage=((curPage-1)/BLOCK*BLOCK)+BLOCK;			
 	if(endPage>totalPage)
