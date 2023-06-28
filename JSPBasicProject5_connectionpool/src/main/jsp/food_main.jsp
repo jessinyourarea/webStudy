@@ -104,9 +104,9 @@
          for(FoodBean vo:list)
          {
       %>
-      	  <div class="col-md-4">
+      	  <div class="col-md-3">
    			 <div class="thumbnail">
-     		   <a href="/w3images/nature.jpg">
+     		   <a href="#">
                  <img src="<%=vo.getPoster() %>" alt="Nature" style="width:100%">
                    <div class="caption">
 		          <p><%=vo.getName() %></p>

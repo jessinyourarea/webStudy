@@ -146,12 +146,23 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
       
      <Context docBase="JSPBasicDBCPProject" path="/JSPBasicDBCPProject" reloadable="true" source="org.eclipse.jst.jee.server:JSPBasicDBCPProject">
-      <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="8" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="hr"/>
+      	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="8" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="hr"/>
       </Context>
       <Context docBase="JQueryProject1" path="/JQueryProject1" reloadable="true" source="org.eclipse.jst.jee.server:JQueryProject1">
-      <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="8" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="hr"/>
+     	 <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="8" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="hr"/>
       </Context>
-      <Context docBase="JSPTemplateProject" path="/JSPTemplateProject" reloadable="true" source="org.eclipse.jst.jee.server:JSPTemplateProject"/><Context docBase="TeamYuna_1stProject" path="/TeamYuna_1stProject" reloadable="true" source="org.eclipse.jst.jee.server:TeamYuna_1stProject"/></Host>
+      <Context docBase="JSPTemplateProject" path="/JSPTemplateProject" reloadable="true" source="org.eclipse.jst.jee.server:JSPTemplateProject"/><Context docBase="TeamYuna_1stProject" path="/TeamYuna_1stProject" reloadable="true" source="org.eclipse.jst.jee.server:TeamYuna_1stProject"/><Context docBase="JSPBasicProject6" path="/JSPBasicProject6" reloadable="true" source="org.eclipse.jst.jee.server:JSPBasicProject6">
+   	 	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="8" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="hr"/>
+      </Context>
+      <Context docBase="JSPBasicProject3" path="/JSPBasicProject3" reloadable="true" source="org.eclipse.jst.jee.server:JSPBasicProject3"/>
+      <Context docBase="JSPMiddleProject1_el" path="/JSPMiddleProject1_el" reloadable="true" source="org.eclipse.jst.jee.server:JSPMiddleProject1_el"/><Context docBase="JSPMiddleProject2_jstl" path="/JSPMiddleProject2_jstl" reloadable="true" source="org.eclipse.jst.jee.server:JSPMiddleProject2_jstl"/><Context docBase="JSPMiddleProject3" path="/JSPMiddleProject3" reloadable="true" source="org.eclipse.jst.jee.server:JSPMiddleProject3"/>
+      <Context docBase="JSPMiddleProject4" path="/JSPMiddleProject4" reloadable="true" source="org.eclipse.jst.jee.server:JSPMiddleProject4">
+   	 	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="8" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="hr"/>
+      </Context>      
+      <Context docBase="JSPMiddleProject5" path="/JSPMiddleProject5" reloadable="true" source="org.eclipse.jst.jee.server:JSPMiddleProject5">
+   	 	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="8" maxWait="-1" name="jdbc/oracle" password="happy" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="hr"/>
+      </Context>      
+      <Context docBase="JspProject" path="/JspProject" reloadable="true" source="org.eclipse.jst.jee.server:JspProject"/></Host>
     </Engine>
   </Service>
 </Server>
