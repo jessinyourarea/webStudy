@@ -4,7 +4,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="dao" class="com.sist.dao.FoodDAO"/>
 <%
-	// 사용자가 보내준 값을 받는다
 	String fno=request.getParameter("fno");	
 	FoodVO vo=dao.foodDetailData(Integer.parseInt(fno));
 	String address=vo.getAddress();
@@ -13,7 +12,7 @@
 	String temp=addr1.trim().substring(addr1.indexOf(" ")+1);
 	String addr3=temp.substring(0,temp.indexOf(" "));
 %>
-<c:set var="vo" value="<%=vo %>"/>
+<c:set var="vo" value="${vo }"/>
 <c:set var="addr1" value="<%=addr1 %>"/>
 <c:set var="addr2" value="<%=addr2 %>"/>
 <c:set var="addr3" value="<%=addr3 %>"/>

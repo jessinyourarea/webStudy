@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.sist.dao.*,java.util.*"%>
+    pageEncoding="UTF-8" import="java.util.*,com.sist.dao.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="dao" class="com.sist.dao.FoodDAO"/>
 <%
@@ -7,11 +7,7 @@
 	CategoryVO cvo=dao.foodCategoryInfoData(Integer.parseInt(cno));
 	List<FoodVO> list=dao.foodCategoryListData(Integer.parseInt(cno));
 %>
-<%-- JSTL, EL에서 사용하는 변수 설정 --%>
-<c:set var="cvo" value="<%=cvo %>"/>
-<c:set var="list" value="<%=list %>"/>
-
-
+<c:set var="vo" value="<%=list %>"/>
 <!DOCTYPE html>
 <html>
 <head>
