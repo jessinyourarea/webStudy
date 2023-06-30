@@ -307,7 +307,7 @@ public class ReplyBoardDAO {
 				{
 					String msg="관리자가 삭제한 게시물입니다.";
 					sql="UPDATE replyBoard SET "
-							+ "subject=? content=? "
+							+ "subject=?, content=? "
 							+ "WHERE no=?";
 					ps=conn.prepareStatement(sql);
 					ps.setString(1, msg);
@@ -383,7 +383,7 @@ public class ReplyBoardDAO {
 			ps.setInt(8, root);
 			ps.executeUpdate();
 			
-			// dept 증가
+			// depth 증가
 			sql="UPDATE replyBoard SET "
 					+ "depth=depth+1 "
 					+ "WHERE no=?";
