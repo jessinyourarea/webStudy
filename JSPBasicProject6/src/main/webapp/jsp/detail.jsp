@@ -7,11 +7,11 @@
  -->
  
  <%
- 		// 1. 사용자가 보내준 값을 받는다
- 		String fno=request.getParameter("fno");
- 		FoodDAO dao=FoodDAO.newInstance();
- 		FoodBean vo=dao.foodDetailData(Integer.parseInt(fno));
- %>
+  // 1. 사용자가 보내준 값을 받는다
+   		String fno=request.getParameter("fno");
+   		FoodDAO dao=FoodDAO.newInstance();
+   		FoodBean vo=dao.foodDetailData(Integer.parseInt(fno));
+  %>
 <!DOCTYPE html>
 <html>
 <head>

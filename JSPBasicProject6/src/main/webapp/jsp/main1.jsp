@@ -72,36 +72,36 @@
 
  -->
  <%
- 	// 출력할 데이터 읽기( 오라클)
- 	// 1. 사용자 요청
- 	String strPage=request.getParameter("page");
- 	// => 첫 페이지: Default로 설정해준다 
- 	if(strPage==null)
- 		strPage="1";
- 	// 2. DAO 연결 =>  데이터 읽기
- 	int curpage=Integer.parseInt(strPage);
- 	FoodDAO dao=FoodDAO.newInstance();
- 	List<FoodBean> list=dao.foodListData(curpage);
- 	int totalpage=dao.foodTotalPage();
- 	// ------------------------ 자바(Model)
- 	// 3. 읽은 데이터 출력 => HTML
- 	// ---------------------- HTML (View) 나눠서 작업 => MV구조
- 	
- 	// 쿠키 읽기
- 	Cookie[] cookies=request.getCookies();
- 	List<FoodBean> cList=new ArrayList<FoodBean>();
- 	if(cookies!=null) //쿠키가 존재하면
- 	{
- 		for(int i=cookies.length-1;i>=0;i--)  //최신부터 읽기 시작
- 		{
- 			if(cookies[i].getName().startsWith("food_"))
- 			{
- 				String fno=cookies[i].getValue();
- 				FoodBean vo=dao.foodDetailData(Integer.parseInt(fno));
- 				cList.add(vo); 				
- 			}
- 		}
- 	}
+ // 출력할 데이터 읽기( 오라클)
+  	// 1. 사용자 요청
+  	String strPage=request.getParameter("page");
+  	// => 첫 페이지: Default로 설정해준다 
+  	if(strPage==null)
+  		strPage="1";
+  	// 2. DAO 연결 =>  데이터 읽기
+  	int curpage=Integer.parseInt(strPage);
+  	FoodDAO dao=FoodDAO.newInstance();
+  	List<FoodBean> list=dao.foodListData(curpage);
+  	int totalpage=dao.foodTotalPage();
+  	// ------------------------ 자바(Model)
+  	// 3. 읽은 데이터 출력 => HTML
+  	// ---------------------- HTML (View) 나눠서 작업 => MV구조
+  	
+  	// 쿠키 읽기
+  	Cookie[] cookies=request.getCookies();
+  	List<FoodBean> cList=new ArrayList<FoodBean>();
+  	if(cookies!=null) //쿠키가 존재하면
+  	{
+  		for(int i=cookies.length-1;i>=0;i--)  //최신부터 읽기 시작
+  		{
+  			if(cookies[i].getName().startsWith("food_"))
+  			{
+  				String fno=cookies[i].getValue();
+  				FoodBean vo=dao.foodDetailData(Integer.parseInt(fno));
+  				cList.add(vo); 				
+  			}
+  		}
+  	}
  %>
  
 <!DOCTYPE html>
@@ -125,30 +125,30 @@
     <div class="row">
       <%-- 맛집 목록 출력 위치 --%>
       <%
-      	for(FoodBean vo:list)
-      	{
+      for(FoodBean vo:list)
+            	{
       %>
       		<div class="col-md-3">
    			 <div class="thumbnail">
      		   <a href="detail_before.jsp?fno=<%=vo.getFno()%>">
-                 <img src="<%=vo.getPoster() %>" alt="Nature" style="width:100%">
+                 <img src="<%=vo.getPoster()%>" alt="Nature" style="width:100%">
                    <div class="caption">
-		          <p><%=vo.getName() %></p>
+		          <p><%=vo.getName()%></p>
 		        </div>
 		      </a>
 		    </div>
 		  </div>
       <%
-      	}
+      }
       %>
     </div>
     <div style="height: 20px"></div>
     <div class="row">
       <%-- 페이지 출력 --%>
       <div class="text-center">
-        <a href="main1.jsp?page=<%=curpage>1?curpage-1:curpage  %>" class="btn btn-sm btn-danger">이전</a>
-          <%=curpage %> page / <%=totalpage %> pages
-        <a href="main1.jsp?page=<%=curpage<totalpage?curpage+1:curpage %>" class="btn btn-sm btn-primary">다음</a>
+        <a href="main1.jsp?page=<%=curpage>1?curpage-1:curpage%>" class="btn btn-sm btn-danger">이전</a>
+          <%=curpage%> page / <%=totalpage%> pages
+        <a href="main1.jsp?page=<%=curpage<totalpage?curpage+1:curpage%>" class="btn btn-sm btn-primary">다음</a>
       </div>
     </div>
     <div style="height: 20px"></div>
@@ -160,16 +160,16 @@
       <%-- 최신 방문 --%>
       
       <%
-      	int i=0;
-		if(cookies!=null && cList.size()>0)
-		{
-	  %>
+            int i=0;
+            		if(cookies!=null && cList.size()>0)
+            		{
+            %>
 	  		<table class="table">
       		<tr>
 	  <%
-			for(FoodBean vo:cList)
-			{
-				if(i>9) break;
+	  for(FoodBean vo:cList)
+	  	{
+	  		if(i>9) break;
 	  %>		<td>
 				<img src="<%=vo.getPoster()%>" style="width:100px;height:100px" title="<%=vo.getName()%>">
 				<p>

@@ -16,8 +16,7 @@ public class MyServlet extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
-		String name=config.getInitparameter("name");
-		System.out.println(name);
+		
 	}
 	
 	

@@ -48,6 +48,8 @@
                   
 --%>
 <%
+
+
 	// 1. 사용자가 전송한 데이터를 받는다 (page)
 	String strPage=request.getParameter("page");
 	// 2. 실행과 동시에 페이지전송은 못함 => 첫페이지는 디폴트를 설정해야함
@@ -78,7 +80,6 @@
 	{
 		endPage=totalpage;
 	}
-	
 %>    
 <!DOCTYPE html>
 <html>
@@ -101,8 +102,9 @@
   <div class="container">
     <div class="row">
       <%
-         for(FoodBean vo:list)
-         {
+
+               for(FoodBean vo:list)
+               {
       %>
       	  <div class="col-md-3">
    			 <div class="thumbnail">

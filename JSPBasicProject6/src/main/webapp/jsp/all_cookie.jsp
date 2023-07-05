@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*,com.sist.dao.*"%>
 <%
-	Cookie[] cookies=request.getCookies();
+Cookie[] cookies=request.getCookies();
 	FoodDAO dao=FoodDAO.newInstance();
 	List<FoodBean> cList=new ArrayList<FoodBean>();
 	if(cookies!=null)
 	{
 		for(int i=0;i<cookies.length;i++)
 		{
-			if(cookies[i].getName().startsWith("food_"))
-			{
-				String fno=cookies[i].getValue();
-				FoodBean vo=dao.foodDetailData(Integer.parseInt(fno));
-				cList.add(vo);
-			}
+	if(cookies[i].getName().startsWith("food_"))
+	{
+		String fno=cookies[i].getValue();
+		FoodBean vo=dao.foodDetailData(Integer.parseInt(fno));
+		cList.add(vo);
+	}
 		}
 	}
 %>
@@ -29,8 +29,8 @@
     <div class="row">
       <%-- 맛집 목록 출력 위치 --%>
       <%
-      	for(FoodBean vo:cList)
-      	{
+      for(FoodBean vo:cList)
+            	{
       %>
       		<div class="col-md-3">
    			 <div class="thumbnail">
